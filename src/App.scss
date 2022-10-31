@@ -1,0 +1,71 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.sector {
+  max-width: 200px;
+  min-width: 200px;
+  height: 50px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2c4592;
+  cursor: pointer;
+  &:nth-child(odd) {
+    background-color: #1b75ba;
+  }
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  &.active {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__content {
+    position: relative;
+    background: #fefefe;
+    border: 1px solid #888;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+    gap: 20px;
+    padding: 20px;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  &__item {
+    flex: 1 1 100px;
+    text-align: center;
+    cursor: pointer;
+  }
+  /* The Close Button */
+  &__close {
+    color: white;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 28px;
+    font-weight: bold;
+    &:hover,
+    &:focus {
+      color: #888;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
